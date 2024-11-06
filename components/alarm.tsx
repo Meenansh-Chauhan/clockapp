@@ -11,13 +11,14 @@ export default function Alarm(){
 const style = StyleSheet.create({
     body:{
         flex:1,
-        backgroundColor:'gold',
+        backgroundColor:'purple',
         justifyContent:'center',
         alignItems:'center',
     },
     text:{
+        color:'blue',
         fontSize:50,
-        backgroundColor:'red',
+        backgroundColor:'gold',
         padding:20,
     },
 })

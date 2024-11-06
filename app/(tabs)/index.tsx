@@ -18,7 +18,7 @@ export default function App(){
     return(
         <NavigationContainer independent >
             <Tab.Navigator screenOptions={{
-                tabBarActiveBackgroundColor:'cyan',
+                tabBarActiveBackgroundColor:'gold',
                 tabBarInactiveBackgroundColor:'plum',
                 headerStyle:{backgroundColor:'plum'}}}>
                 

@@ -11,14 +11,14 @@ export default function Timer(){
 const style = StyleSheet.create({
     body:{
         flex:1,
-        backgroundColor:'red',
+        backgroundColor:'purple',
         justifyContent:'center',
         alignItems:'center',
     },
     text:{
-        color:'white',
+        color:'blue',
         fontSize:50,
-        backgroundColor:'blue',
+        backgroundColor:'gold',
         padding:20,
     },
 })
