@@ -8,24 +8,23 @@ import Alarm from "@/components/alarm";
 import { Ionicons } from "@expo/vector-icons";
 
 const Tab=createBottomTabNavigator();
-const fxn=()=>{
-    return (
-        <View><Text>Hello</Text></View>
-    );
-}
+
 
 export default function App(){
     return(
         <NavigationContainer independent >
             <Tab.Navigator screenOptions={{
-                tabBarActiveBackgroundColor:'gold',
-                tabBarInactiveBackgroundColor:'plum',
-                headerStyle:{backgroundColor:'plum'}}}>
+                tabBarActiveBackgroundColor:'rgb(40,40,40)',
+                tabBarInactiveBackgroundColor:'black',
+                headerStyle:{backgroundColor:'black',borderBottomColor:'gold',borderBottomWidth:1},
+                headerTitleStyle:{color:'white'},
+                tabBarStyle: {borderTopColor: 'gold', height:60},
+                tabBarLabelStyle:{fontSize:15, color:'white'}}}>
                 
-                <Tab.Screen name="Alarm" component={Alarm} options={{tabBarIcon:()=><Ionicons name="paper-plane" size={30}  />}} />
-                <Tab.Screen name="Clock" component={WorldClock} options={{tabBarIcon:()=><Ionicons name="aperture" size={30}/>}} />
-                <Tab.Screen name="Timer" component={Timer} options={{tabBarIcon:()=><Ionicons name="download" size={30}/>}} />
-                <Tab.Screen name="Stopwatch" component={Stopwatch} options={{tabBarIcon:()=><Ionicons name="bluetooth" size={30}/>}} />
+                <Tab.Screen name="Alarm" component={Alarm} options={{tabBarIcon:()=><Ionicons name="alarm-outline" size={30} color={'white'}  />}} />
+                <Tab.Screen name="Clock" component={WorldClock} options={{tabBarIcon:()=><Ionicons name="time-outline" size={30} color={'white'}/>}} />
+                <Tab.Screen name="Timer" component={Timer} options={{tabBarIcon:()=><Ionicons name="timer-outline" size={30} color={'white'}/>}} />
+                <Tab.Screen name="Stopwatch" component={Stopwatch} options={{tabBarIcon:()=><Ionicons name="stopwatch-outline" size={30} color={'white'}/>}} />
             </Tab.Navigator>
         </NavigationContainer>
     )

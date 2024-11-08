@@ -1,36 +1,46 @@
 import { useState } from "react";
-import{View,Text,Button,TouchableOpacity, StyleSheet} from "react-native";
+import{View,Text,TouchableOpacity, StyleSheet} from "react-native";
 export default function Stopwatch(){
-const [text,settext]= useState ("00:00:00");
-const [def,res]= useState (false);
+const [text,Settext]= useState ("00:00:00");
+const [Set,Res]= useState <Boolean>(false);
+const [timer,Settimer]= useState <NodeJS.Timeout | null>(null);
 let starttime =0;
-let timer : NodeJS.Timeout;
+let Clear : NodeJS.Timeout;
 let usedtime=0;
-let running =def;
 
-function start(){
-if(!running){
-starttime = Date.now() - usedtime;
-timer = setInterval(update,100);
-res(true);
-}
-}
+const Rest=()=>{
+    Res(true);
+};
 
-function stop(){
-    if(running){
+const Restt=()=>{
+    Res(false);
+};
+
+
+function Start(){
+if(!Set){
+starttime = Date.now() - usedtime,
+Clear = setInterval(Update,100),
+Settimer(Clear);
+Rest();  
+}}
+
+
+function Stop(){
+  if (Set){
         clearInterval(timer);
         usedtime= Date.now()- starttime;
-        res(false);
-    }
-} 
+        Restt();
+} }
 
-function reset(){
+function Reset(){
     clearInterval(timer);
     usedtime=0;
-    res(false);
+    Restt();
+    Settext("00:00:00")
 }
 
-function update(){
+function Update(){
     const currenttime = Date.now();
     usedtime = currenttime - starttime;
 
@@ -44,7 +54,7 @@ function update(){
     // seconds=String(seconds).padStart(2,"0");
     // milisecond=String(milisecond).padStart(2,"0");
 
-    settext (`${hours}:${minutes}:${seconds}:${milisecond}`);
+    Settext (`${hours}:${minutes}:${seconds}:${milisecond}`);
     
 
 }
@@ -56,13 +66,13 @@ function update(){
         <Text style={style.text}>{text}</Text>
         
         <View style={style.btnbox}>
-        <TouchableOpacity style={style.button} onPress={() => {start()}}>
+        <TouchableOpacity style={style.button} onPress={() => {Start()}}>
         <Text  style={style.btntext}>Start</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.button} onPress={() => {stop()} }>
+        <TouchableOpacity style={style.button} onPress={() => {Stop()} }>
         <Text  style={style.btntext}>Stop</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.button} onPress={() => {reset()}}>
+        <TouchableOpacity style={style.button} onPress={() => {Reset()}}>
         <Text  style={style.btntext}>reset</Text>
         </TouchableOpacity>
         </View>
@@ -73,26 +83,29 @@ function update(){
 const style = StyleSheet.create({
     body:{
         flex:1,
-        backgroundColor:'purple',
+        backgroundColor:'black',
         justifyContent:'center',
         alignItems:'center',
     },
     text:{
+        borderRadius:200,
         fontSize:50,
-        backgroundColor:'gold',
-        color:'blue',
+        backgroundColor:'rgba(255,255,255,0.2)',
+        color:'white',
         padding:20,
     },
     btntext:{
         fontSize:30,
-        color:'gold',
+        color:'black',
         },
     button:{
+        borderRadius:200,
         fontSize:50,
-        backgroundColor:'green',
+        backgroundColor:'lightblue',
         padding:20,
         borderColor:'blue',
         margin:5,
+        marginTop:30,
     },
     btnbox:{
        flexDirection:'row',

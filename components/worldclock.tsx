@@ -11,14 +11,15 @@ export default function WorldClock(){
 const style = StyleSheet.create({
     body:{
         flex:1,
-        backgroundColor:'purple',
+        backgroundColor:'black',
         justifyContent:'center',
         alignItems:'center',
     },
     text:{
-        color:'blue',
+        borderRadius:200,
+        color:'lightblue',
         fontSize:40,
-        backgroundColor:'gold',
+        backgroundColor:'rgba(255,255,255,0.2)',
         padding:20,
     },
 })
