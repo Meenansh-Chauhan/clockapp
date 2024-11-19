@@ -1,7 +1,7 @@
 import { useState } from "react";
 import{View,Text,TouchableOpacity, StyleSheet} from "react-native";
 export default function Stopwatch(){
-const [text,Settext]= useState ("00:00:00");
+const [text,Settext]= useState ("00:00:00:00");
 const [Set,Res]= useState <Boolean>(false);
 const [timer,Settimer]= useState <NodeJS.Timeout | null>(null);
 let starttime =0;
@@ -37,23 +37,19 @@ function Reset(){
     clearInterval(timer);
     usedtime=0;
     Restt();
-    Settext("00:00:00")
+    Settext("00:00:00:00")
 }
 
 function Update(){
     const currenttime = Date.now();
     usedtime = currenttime - starttime;
 
-    let hours = Math.floor(usedtime / (1000*60*60)); 
-    let minutes = Math.floor(usedtime / (1000*60)%60);
-    let seconds = Math.floor(usedtime / (1000)%60);
-    let milisecond = Math.floor(usedtime%1000/10);
+    let hours = Math.floor(usedtime / (1000*60*60)).toString().padStart(2,"0") ; 
+    let minutes = Math.floor(usedtime / (1000*60)%60).toString().padStart(2,"0");
+    let seconds = Math.floor(usedtime / (1000)%60).toString().padStart(2,"0");
+    let milisecond = Math.floor(usedtime%1000/10).toString().padStart(2,"0");
 
-    // hours=String(hours).padStart(2,"0");
-    // minutes=String(minutes).padStart(2,"0");
-    // seconds=String(seconds).padStart(2,"0");
-    // milisecond=String(milisecond).padStart(2,"0");
-
+    
     Settext (`${hours}:${minutes}:${seconds}:${milisecond}`);
     
 

@@ -14,10 +14,10 @@ export default function App(){
     return(
         <NavigationContainer independent >
             <Tab.Navigator screenOptions={{
-                tabBarActiveBackgroundColor:'rgb(40,40,40)',
+                tabBarActiveBackgroundColor:'rgba(40,40,40,0.9)',
                 tabBarInactiveBackgroundColor:'black',
                 headerStyle:{backgroundColor:'black',borderBottomColor:'gold',borderBottomWidth:1},
-                headerTitleStyle:{color:'white'},
+                headerTitleStyle:{color:'gold', fontSize:30},
                 tabBarStyle: {borderTopColor: 'gold', height:60},
                 tabBarLabelStyle:{fontSize:15, color:'white'}}}>
                 
@@ -29,3 +29,9 @@ export default function App(){
         </NavigationContainer>
     )
 }
+
+
+
+
+
+
