@@ -2,6 +2,7 @@ import{View,Text,Modal,TouchableOpacity,StyleSheet} from "react-native";
 import SvgComponent from '../assets/map'
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
+import TimeZoner from './luxon';
 
 export default function WorldClock(){
     const [modalVisible, setModalVisible] = useState(false);
@@ -10,8 +11,9 @@ export default function WorldClock(){
       <TouchableOpacity style={style.button} onPress={() => setModalVisible(true) }> 
         <Text style={[{color:'gold',padding:10,fontSize:25}]} >Add Clock</Text> 
         </TouchableOpacity> 
-
-
+        <View>
+          <TimeZoner/>
+        </View>
         <Modal visible={modalVisible}>
         
         <SvgComponent></SvgComponent>

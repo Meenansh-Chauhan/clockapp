@@ -2,19 +2,16 @@ import {
     View,
     Modal,
     Text,
-    TextInput,
     TouchableOpacity,
     StyleSheet,
     Alert,
   } from "react-native";
-  import React, { useState } from "react";
+  import React, { useState, useEffect } from "react";
   import { Audio } from 'expo-av';
-  import RNPickerSelect from "react-native-picker-select";
   import ScrollInput from './scrollinput'
-import { ScrollView } from "react-native-gesture-handler";
 
 
-  export default function Timer() {
+  export default function Timer(X) {
     const [modalscn, setmodalscn] = useState(false);
     const [hour, sethour] = useState("");
     const [min, setmin] = useState("");
@@ -95,47 +92,11 @@ import { ScrollView } from "react-native-gesture-handler";
      
       <View style={style.body}>
         <View style={{ flexDirection: "row" }}>
-        <ScrollInput></ScrollInput>
+        <ScrollInput > 
+        
+        </ScrollInput>
+      
 
-        {/* <RNPickerSelect 
-          onValueChange={(value) => sethour(value)}
-          items={generatePickerData(24)} 
-          placeholder={{ label: "00", value: 0 }}
-          style={{
-            inputIOS: style.inputIOS,
-            inputAndroid: style.inputAndroid,
-            iconContainer: style.iconContainer,
-            placeholder: style.placeholder,
-          }}
-          useNativeAndroidPickerStyle={false}
-          />
-          <Text style={[style.disptext,{fontSize:60}]} >:</Text>
-           <RNPickerSelect 
-          onValueChange={(value) => setmin(value)}
-          items={generatePickerData(60)} 
-          placeholder={{ label: "00", value: 0 }}
-          style={{
-            inputIOS: style.inputIOS,
-            inputAndroid: style.inputAndroid,
-            iconContainer: style.iconContainer,
-            placeholder: style.placeholder,
-          }}
-          useNativeAndroidPickerStyle={false}
-          />
-          <Text style={[style.disptext,{fontSize:60}]} >:</Text>
-           <RNPickerSelect 
-          onValueChange={(value) => setsec(value)}
-          items={generatePickerData(60)} 
-          placeholder={{ label: "00", value: 0 }}
-          style={{
-            inputIOS: style.inputIOS,
-            inputAndroid: style.inputAndroid,
-            iconContainer: style.iconContainer,
-            placeholder: style.placeholder,
-          }}
-          useNativeAndroidPickerStyle={false}
-          /> */}
-          
          
 
         </View>

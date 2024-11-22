@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import { ScrollView, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import Alarm from './alarm';
 
-export default function ScrollInput({x,y,z}) {
+export default function ScrollInput() {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -93,7 +94,7 @@ export default function ScrollInput({x,y,z}) {
             ))}
           </ScrollView>
         </View>
-
+            <Alarm hour={hours} minutes={minutes} sec={seconds} />
       </View>
     </View>
   );

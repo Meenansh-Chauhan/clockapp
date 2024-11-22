@@ -22,7 +22,7 @@ export default function App(){
                 tabBarLabelStyle:{fontSize:15, color:'white'}}}>
                 
                 <Tab.Screen name="Alarm" component={Alarm} options={{tabBarIcon:()=><Ionicons name="alarm-outline" size={30} color={'white'}  />}} />
-                <Tab.Screen name="Clock" component={WorldClock} options={{tabBarIcon:()=><Ionicons name="time-outline" size={30} color={'white'}/>}} />
+                <Tab.Screen name="World Clock" component={WorldClock} options={{tabBarIcon:()=><Ionicons name="time-outline" size={30} color={'white'}/>}} />
                 <Tab.Screen name="Timer" component={Timer} options={{tabBarIcon:()=><Ionicons name="timer-outline" size={30} color={'white'}/>}} />
                 <Tab.Screen name="Stopwatch" component={Stopwatch} options={{tabBarIcon:()=><Ionicons name="stopwatch-outline" size={30} color={'white'}/>}} />
             </Tab.Navigator>
